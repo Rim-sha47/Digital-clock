@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0d0d0d;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 45%;
+    height: 45%;
+    border: 4px solid #1a1a1a;
+    border-radius: 3rem;
+    display: grid;
+    grid-template-rows: 30% 70%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 2rem;
+    background: linear-gradient(90deg,#00dbde,#fc00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    width: 30%;
+    height: 8rem;
+    background: #1a1a1a;
+    margin: 0.5rem;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.clock::before,
+.clock::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -50%;
+    left: -50%;
+    transform-origin: bottom right;
+    animation: spin 5s linear infinite;
+}
+
+.clock::before {
+    background: linear-gradient(0deg,transparent,#2370f5,#2370f5);
+}
+
+.clock::after {
+    background: linear-gradient(0deg,transparent,#b91fdc,#b91fdc);
+    animation-delay: -2.5s;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.front-clock {
+    position: absolute;
+    inset: 4px;
+    background: #0d0d0d;
+    border-radius: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.front-clock p {
+    font-size: 1rem;
+}
